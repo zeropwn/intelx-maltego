@@ -1,4 +1,4 @@
-import intelxapi, pathlib, json
+import intelxapi, pathlib, json, html
 from maltego_trx.maltego import UIM_TYPES
 from maltego_trx.entities import URL
 
@@ -17,7 +17,7 @@ class ixsearch(DiscoverableTransform):
                 key = settings['APIKEY']
                 h.close()
             intelx = intelxapi.intelx(key, ua='IX Maltego Transform/2')
-            results = intelx.search(domain_name)
+            results = intelx.search(domain_name, maxresults=request.Slider)
             for record in results['records']:
                 if record['name'] == "":
                     name = record['systemid']
@@ -33,6 +33,12 @@ class ixsearch(DiscoverableTransform):
                 entity.addProperty("Type", "Type", "loose", record['type'])
                 entity.addProperty("Media", "Media", "loose", record['media'])
                 entity.addProperty("Bucket", "Bucket", "loose", record['bucket'])
+
+                preview = intelx.FILE_PREVIEW(record['type'], record['media'], 0, record['storageid'], record['bucket'])
+                preview = preview.replace('\n', '<br>')
+                preview = html.escape(preview)
+
+                entity.addDisplayInformation(preview, 'Preview')
 
         except Exception as e:
             response.addUIMessage("Error: " + str(e), UIM_TYPES["partial"])
