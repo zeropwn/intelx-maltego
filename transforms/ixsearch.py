@@ -16,7 +16,7 @@ class ixsearch(DiscoverableTransform):
                 key = settings['APIKEY']
                 h.close()
             intelx = intelxapi.intelx(key, ua='IX Maltego Transform/3')
-            results = intelx.search(domain_name, maxresults=request.Slider)
+            results = intelx.search(domain_name, maxresults=12) # request.Slider() returns 100 in Maltego CE, temp hardcode to 12 for testing
             for record in results['records']:
                 if record['name'] == "":
                     name = record['systemid']

@@ -91,6 +91,11 @@ config = {
     'ixselectors': {
         'filename': 'intelx.ixselectors.transformsettings',
         'propval': f'{cwd}/project.py local ixselectors'
+    },
+
+    'searchselector': {
+        'filename': 'intelx.searchselector.transformsettings',
+        'propval': f'{cwd}/project.py local ixsearch'
     }
 
 }
