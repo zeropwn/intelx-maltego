@@ -32,7 +32,7 @@ Maltego Transforms for Intelligence X (intelx.io)
 
 ### Requirements
 
-* [intelx-0.4](https://github.com/IntelligenceX/SDK/tree/master/Python)
+* [intelx-0.5](https://github.com/IntelligenceX/SDK/tree/master/Python)
 * [maltego-trx](https://github.com/paterva/maltego-trx)
 * [python \>= 3](https://www.python.org/)
 * [An Intelligence X API Key](https://intelx.io/product)
