@@ -86,6 +86,11 @@ config = {
     'searchiban': {
         'filename': 'intelx.searchiban.transformsettings',
         'propval': f'{cwd}/project.py local ixsearch' 
+    },
+
+    'ixselectors': {
+        'filename': 'intelx.ixselectors.transformsettings',
+        'propval': f'{cwd}/project.py local ixselectors'
     }
 
 }

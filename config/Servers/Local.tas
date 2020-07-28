@@ -19,6 +19,7 @@
       <Transform name="intelx.searchurl"/>
       <Transform name="intelx.searchmac"/>
       <Transform name="intelx.searchbtc"/>
+      <Transform name="intelx.ixselectors"/>
    </Transforms>
    <Seeds/>
 </MaltegoServer>
