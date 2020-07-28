@@ -25,29 +25,37 @@ class ixselectors(DiscoverableTransform):
                 
                 if selector['type'] == 1: # Email
                     entity = response.addEntity(Email, selector['selector'])
+                    entity.addProperty('SID', 'SID', 'loose', selector['systemid'])
 
                 elif selector['type'] == 2: # Domain
                     entity = response.addEntity(Domain, selector['selector'])
+                    entity.addProperty('SID', 'SID', 'loose', selector['systemid'])
 
                 elif selector['type'] == 3: # URL
                     entity = response.addEntity(URL, selector['selector'])
                     entity.addProperty('url', 'url', 'loose', selector['selector'])
+                    entity.addProperty('SID', 'SID', 'loose', selector['systemid'])
 
                 elif selector['type'] == 4: # Phone
                     entity = response.addEntity(PhoneNumber, selector['selector'])
+                    entity.addProperty('SID', 'SID', 'loose', selector['systemid'])
 
                 elif selector['type'] == 6: # IP
                     entity = response.addEntity(IPAddress, selector['selector'])
+                    entity.addProperty('SID', 'SID', 'loose', selector['systemid'])
 
                 elif selector['type'] == 17: # Credit card
                     entity = response.addEntity('intelx.creditcard', selector['selector'])
+                    entity.addProperty('SID', 'SID', 'loose', selector['systemid'])
 
                 elif selector['type'] == 22: # MAC address
                     entity = response.addEntity('intelx.macaddress', selector['selector'])
                     entity.addProperty('MAC Address', 'MAC Address', 'loose', selector['selector'])
+                    entity.addProperty('SID', 'SID', 'loose', selector['systemid'])
 
                 else:
                     entity = response.addEntity('intelx.selector', selector['selector'])
-
+                    entity.addProperty('SID', 'SID', 'loose', selector['systemid'])
+                    
         except Exception as e:
             response.addUIMessage("Error: " + str(e), UIM_TYPES["partial"])
