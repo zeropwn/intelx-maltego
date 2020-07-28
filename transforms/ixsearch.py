@@ -4,7 +4,6 @@ from maltego_trx.entities import URL
 
 from maltego_trx.transform import DiscoverableTransform
 
-
 class ixsearch(DiscoverableTransform):
     @classmethod
     def create_entities(cls, request, response):
@@ -37,6 +36,9 @@ class ixsearch(DiscoverableTransform):
                 preview = intelx.FILE_PREVIEW(record['type'], record['media'], 0, record['storageid'], record['bucket'])
                 preview = preview.replace('\n', '<br>')
                 preview = html.escape(preview)
+
+                stripped_preview = (c for c in preview if 0 < ord(c) < 127)
+                preview = ''.join(stripped_preview)
 
                 entity.addDisplayInformation(preview, 'Preview')
 
