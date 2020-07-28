@@ -15,7 +15,7 @@ class ixsearch(DiscoverableTransform):
                 settings = json.loads(contents)
                 key = settings['APIKEY']
                 h.close()
-            intelx = intelxapi.intelx(key, ua='IX Maltego Transform/2')
+            intelx = intelxapi.intelx(key, ua='IX Maltego Transform/3')
             results = intelx.search(domain_name, maxresults=request.Slider)
             for record in results['records']:
                 if record['name'] == "":
