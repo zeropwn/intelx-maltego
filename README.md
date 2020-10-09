@@ -18,6 +18,8 @@ Maltego Transforms for Intelligence X (intelx.io)
 * Intelligence X Subdomains Transform
 * Intelligence X Search Result Transform
 * Intelligence X Selectors Transform
+* Intelligence X History Transform
+* Intelligence X Treeview Transform
 
 #### Entities
 * Intelligence X BTC Entity
@@ -29,6 +31,8 @@ Maltego Transforms for Intelligence X (intelx.io)
 * Intelligence X System ID Entity
 * Intelligence X UUID Entity
 * Intelligence X Selector Entity
+* Intelligence X Leak Entity
+* Intelligence X Historical Search Result Entity
 
 ### Requirements
 
