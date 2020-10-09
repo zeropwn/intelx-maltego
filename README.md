@@ -32,6 +32,7 @@ Maltego Transforms for Intelligence X (intelx.io)
 * Intelligence X UUID Entity
 * Intelligence X Selector Entity
 * Intelligence X Leak Entity
+* Intelligence X Search Result Entity
 * Intelligence X Historical Search Result Entity
 
 ### Requirements
